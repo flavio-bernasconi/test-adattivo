@@ -1,0 +1,57 @@
+.cards {
+    .model-card {
+        img {
+            margin-top: 60px;
+        }
+        .card-body {
+            color: $blue !important;
+            .card-title {
+                font-size: $medium-size;
+                line-height: 32px;
+                font-weight: $semi-bold-weight;
+            }
+            .card-subtitle {
+                font-size: 16px;
+                font-weight: $semi-bold-weight;
+            }
+            .card-paragraph {
+                font-size: $small-size;
+                line-height: 24px;
+                font-weight: $normal-weight;
+                margin: 25px 0;
+            }
+            .card-list {
+                li {
+                    font-size: 14px;
+                    font-weight: $normal-weight;
+                    line-height: 24px;
+                    span {
+                        font-weight: $bold-weight;
+                    }
+                }
+            }
+            .card-link {
+                font-weight: $bold-weight;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .model-card.dark {
+        @include gradiant(top);
+        @include shadow(25px);
+        border-radius: 10px;
+        .card-body {
+            color: white !important;
+            a {
+                color: white !important;
+            }
+        }
+    }
+    .btn-cta {
+        margin-top: 60px;
+        margin-bottom: $margin-bottom-section;
+    }
+}

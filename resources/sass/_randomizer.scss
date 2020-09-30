@@ -1,0 +1,25 @@
+.randomizer {
+    color: white;
+    @include text-container(white);
+    .text-container {
+        margin-bottom: 0;
+    }
+    #randomizer .text-container {
+        margin-bottom: 50px;
+        margin-top: 50px;
+        .sub-title {
+            margin-bottom: 10px;
+        }
+        .btn-cta {
+            margin-top: 40px;
+        }
+    }
+    padding: 90px 0;
+    background-color: $blue;
+    &.ascending {
+        background-color: $ascending-color;
+    }
+    &.descending {
+        background-color: $descending-color;
+    }
+}

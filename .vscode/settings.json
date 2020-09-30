@@ -1,0 +1,4 @@
+{
+    "blade.format.enable": true,
+    "files.associations": { ".blade.php": "html", ".tpl": "html" }
+}

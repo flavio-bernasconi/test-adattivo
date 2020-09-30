@@ -1,0 +1,13 @@
+header {
+    margin-bottom: $margin-bottom-section;
+    .wrapper-header {
+        min-height: 100vh;
+        // ../img/header-bg.jpg
+        background-image: url("../../public/img/header-bg.jpg");
+        @include text-container($white);
+        .text-container {
+            margin-bottom: $margin-bottom-section;
+            margin-left: $margin-header;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@mixin menuTransparent {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -webkit-gradient(
+        linear,
+        50% 0%,
+        50% 100%,
+        color-stop(0%, rgba(0, 0, 0, 0)),
+        color-stop(100%, rgba(0, 0, 0, 0))
+    );
+    background-image: -webkit-linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    @media #{$menu-collapse} {
+        background: white !important;
+    }
+}
+
+.navbar {
+    transition: all 0.3s;
+    padding: 30px !important;
+    &.transparent {
+        @include menuTransparent;
+        .collapse,
+        .collapsing {
+            .navbar-nav {
+                margin-left: 70px;
+                @media #{$menu-collapse} {
+                    margin-left: 0px;
+                    margin-bottom: 50px;
+                }
+                .nav-link {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    color: white !important;
+                    font-weight: $semi-bold-weight;
+                    margin-right: 30px;
+                    @media #{$menu-collapse} {
+                        color: $blue !important;
+                        text-align: center;
+                        margin-right: 0px;
+                    }
+                }
+            }
+            &.show,
+            &.collapsing {
+                display: flex;
+            }
+            @media #{$menu-collapse} {
+                justify-content: center !important;
+                flex-wrap: wrap;
+                & ul {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.scrolled {
+        background-color: white !important;
+        .collapse .navbar-nav .nav-link {
+            color: $blue !important;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 27px;
+        bottom: 0;
+        height: 1px;
+        width: calc(100% - 54px); /* or 100px */
+        border-bottom: 1px solid $blue;
+    }
+}

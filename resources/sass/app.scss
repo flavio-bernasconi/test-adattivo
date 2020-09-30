@@ -1,0 +1,58 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Rajdhani:wght@500&display=swap");
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+@import "./menu";
+@import "./header";
+@import "./secondSection";
+@import "./cardsSection";
+@import "./randomizer";
+
+body {
+    font-family: $font-family-sans-serif;
+    background-color: white;
+}
+
+.section-title {
+    font-size: $big-size;
+    line-height: 58px;
+    font-weight: $semi-bold-weight;
+    margin-bottom: 60px;
+    color: $blue;
+}
+
+.btn-cta {
+    padding: 19px 33px !important;
+    font-size: $small-size;
+    font-weight: $bold-weight;
+    text-transform: uppercase;
+    color: white;
+    @include gradiant(left);
+    border-radius: 33px;
+    border: none;
+    transition: all 0.3s;
+    @include shadow(15px);
+    &.without-shadow {
+        box-shadow: none !important;
+    }
+    &.white {
+        background-color: white !important;
+        background-image: none;
+        color: $blue;
+    }
+    &.thinner {
+        padding: 12px 33px !important;
+    }
+    &:hover {
+        transform: scale(0.95);
+    }
+}
+
+button:focus {
+    outline: none;
+}
